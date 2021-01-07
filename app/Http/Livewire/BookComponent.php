@@ -9,28 +9,35 @@ use App\Models\User;
 class BookComponent extends Component
 {
     public $users = [];
-    public $title;
     public $showList = false;
+    public $title;
+    public $search;
     public $userId;
-    public $authorInput = "";
+    // public $data = [
+    //     "name" => "",
+    //     "age" => "",
+    //     "genre" => ""
+    // ];
 
-    public function updatedAuthorInput() {
-        $this->users = User::where('name', 'like', "%$this->authorInput%")->get();
+    public function updatedSearch($value) {
+        $this->users = User::where("name", "like", "%{$this->search}%")->get();
         $this->showList = true;
     }
 
-    public function clear() {
-        $this->reset(['authorInput', 'userId']);
-    }
-
     public function setId($user) {
-        $this->userId = $user['id'];
-        $this->authorInput = $user['name'];
+        $this->userId = $user["id"];
+        $this->search = $user["name"];
         $this->showList = false;
     }
 
-    // public function mount() {
+    public function clear() {
+        // $this->search = null;
+        // $this->userId = null;
+        $this->reset(['search', 'userId']);
+    }
 
+    // public function clearUser() {
+    //     $this->reset('data');
     // }
 
     public function save() {
@@ -38,7 +45,9 @@ class BookComponent extends Component
             'title' => $this->title,
             'user_id' => $this->userId
         ]);
-        
+
+        // $this->title = null;
+
         return redirect()->to(route('books.list'));
     }
 

@@ -17,16 +17,6 @@
                 @empty
                     <p>Nenhum livro cadastrado.</p>
                 @endforelse
-                <!-- <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Monteiro Lobato</li>
-                <li class="w-full px-2 cursor-pointer hover:bg-gray-200">José de Alencar</li>
-                <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Cecília Meireles</li>
-                <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Carlos D. de Andrade</li>
-                <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Machado de Assis</li>
-                <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Clarice Lispector</li>
-                <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Ruth Rocha</li>
-                <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Graciliano Ramos</li>
-                <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Mario Quintana</li>
-                <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Ana Maria Machado</li> -->
             </ul>
         </div>
     </div>

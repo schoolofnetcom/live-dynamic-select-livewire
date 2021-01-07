@@ -5,15 +5,15 @@
         <form wire:submit.prevent="save" class="flex flex-col w-full bg-indigo-200 mt-16 p-8 space-y-2" autocomplete="off">
             <div>
                 <div>
-                    <label for="catogory" class="block">Nome do livro</label>
-                    <input wire:model="title" type="text" id="catogory" class="w-full border mb-2 h-9 pl-2">
+                    <label for="title" class="block">Nome do livro</label>
+                    <input wire:model="title" type="text" id="title" class="w-full border mb-2 h-9 pl-2">
                 </div>
             </div>
             <div>
                 <div class="relative">
                     <label for="author" class="block">Autor</label>
                     <div>
-                        <input wire:model="authorInput" type="text" id="author" class="w-full border mb-2 h-9 pl-2">
+                        <input wire:model="search" type="text" id="author" class="w-full border mb-2 h-9 pl-2">
                         <span wire:click="clear" class="absolute right-2 top-7 cursor-pointer">&#10006;</span>
                     </div>
                 </div>
@@ -21,20 +21,8 @@
                     @if($showList)
                     <ul class="bg-white opacity-70 -mt-2 py-2 h-28 overflow-auto">
                         @foreach($users as $user)
-                            <li wire:click="setId({{$user}})" class="w-full px-2 cursor-pointer hover:bg-gray-200">
-                                {{ $user->name }}
-                            </li>
+                            <li wire:click="setId({{ $user }})" class="w-full px-2 cursor-pointer hover:bg-gray-200">{{ $user->name }}</li>
                         @endforeach
-                        <!-- <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Monteiro Lobato</li>
-                        <li class="w-full px-2 cursor-pointer hover:bg-gray-200">José de Alencar</li>
-                        <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Cecília Meireles</li>
-                        <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Carlos D. de Andrade</li>
-                        <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Machado de Assis</li>
-                        <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Clarice Lispector</li>
-                        <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Ruth Rocha</li>
-                        <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Graciliano Ramos</li>
-                        <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Mario Quintana</li>
-                        <li class="w-full px-2 cursor-pointer hover:bg-gray-200">Ana Maria Machado</li> -->
                     </ul>
                     @endif
                 </div>
@@ -43,6 +31,13 @@
                 Cadastrar
             </button>
         </form>
+
+        {{-- <div>
+            <input wire:model="data.name" type="text">
+            <input wire:model="data.age" type="number">
+            <input wire:model="data.genre" type="text">
+            <button wire:click="clearUser">Limpar usuario</button>
+        </div> --}}
 
         <div class="pt-4">
             <a class="text-2xl text-indigo-600" href="{{ route('books.list') }}"><< voltar</a>

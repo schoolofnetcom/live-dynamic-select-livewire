@@ -2,10 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Book;
-use App\Models\User;
 
-Route::get('/select', function () {
-    return view('select');
+Route::get('/', function () {
+    return view('welcome');
 });
 
 Route::get('books/create', function() {
