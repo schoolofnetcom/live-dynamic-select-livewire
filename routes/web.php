@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Book;
+use App\Models\User;
 
 Route::get('/select', function () {
     return view('select');
